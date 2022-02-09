@@ -28,12 +28,12 @@ public class Exercise {
     }
 
     // EFFECTS: returns the duration of the exercise
-    public double getExerciseDuration() {
+    public int getExerciseDuration() {
         return exerciseDuration;
     }
 
     // EFFECTS: returns the calories burnt during the duration of the exercise
-    public double getCaloriesBurnt() {
+    public int getCaloriesBurnt() {
         return caloriesBurnt;
     }
 
