@@ -1,19 +1,28 @@
 package model;
 
-// Represents an exercise with the name,type duration and calories burnt
+// Represents an exercise with name, sets, reps, duration and calories burnt
 public class Exercise {
     private String exerciseName;
-    private String exerciseType;
+    private int exerciseSets;
+    private int exerciseReps;
     private int exerciseDuration;
     private int caloriesBurnt;
 
-    // REQUIRES: name,type duration and caloriesburnt shouldn't be empty
-    // EFFECTS: Constructs an exercise with its name, time and calories burnt.
-    public Exercise(String name, String type, int duration, int caloriesburnt) {
+    // REQUIRES: exerciseName,exerciseSets, caloriesBurnt, exerciseReps, exerciseWeight shouldn't be empty;
+    // exerciseDuration>0
+    // EFFECTS: Constructs an exercise with its name, sets,reps and calories burnt.
+    // exerciseDuration = duration if duration >=0; else exerciseDuration=0
+    public Exercise(String name, int sets, int reps, int duration, int caloriesBurnt) {
         this.exerciseName = name;
-        this.exerciseType = type;
-        this.exerciseDuration = duration;
-        this.caloriesBurnt = caloriesburnt;
+        this.exerciseSets = sets;
+        this.exerciseReps = reps;
+        this.caloriesBurnt = caloriesBurnt;
+
+        if (duration >= 0) {
+            exerciseDuration = duration;
+        } else {
+            exerciseDuration = 0;
+        }
 
     }
 
@@ -22,9 +31,9 @@ public class Exercise {
         return exerciseName;
     }
 
-    // EFFECTS: returns the type of exercise
-    public String getExerciseType() {
-        return exerciseType;
+    // EFFECTS: returns number of sets
+    public int getExerciseSets() {
+        return exerciseSets;
     }
 
     // EFFECTS: returns the duration of the exercise
@@ -36,5 +45,43 @@ public class Exercise {
     public int getCaloriesBurnt() {
         return caloriesBurnt;
     }
+
+    // EFFECTS: returns number of reps
+    public int getExerciseReps() {
+        return exerciseReps;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes exerciseName to str
+    public void changeExerciseName(String str) {
+        exerciseName = str;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes exerciseSets to s
+    public void changeExerciseSets(int s) {
+        exerciseSets = s;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes exerciseDuration to d
+    public void changeExerciseDuration(int d) {
+        exerciseDuration = d;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes exerciseReps to r
+    public void changeExerciseReps(int r) {
+        exerciseReps = r;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: changes caloriesBurnt to c
+    public void changeCaloriesBurnt(int c) {
+        caloriesBurnt = c;
+    }
+
+
+
 
 }

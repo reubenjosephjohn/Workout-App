@@ -14,8 +14,6 @@ remaining fit.
 
 ## User Stories
 
-- As a user, I want to be able to add a workout to my plan.
-- As a user, I want to be able to view a list of the names of the workouts in my fitness plan.
-- As a user, I want to be able to select a workout in my plan and view it in detail.
-- As a user, I want to be able to select a workout in my plan and rate it on a scale
-of one to five stars.
+- As a user, I want to be able to add an exercise to my plan.
+- As a user, I want to be able to view a list of the exercises of the workouts in my fitness plan.
+- As a user, I want to be able to select a session in my plan and view it in detail.
