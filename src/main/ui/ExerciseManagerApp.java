@@ -82,7 +82,7 @@ public class ExerciseManagerApp {
         System.out.println("\tq -> Quit");
     }
 
-    // EFFECTS: displays numbered list of session names, or if none, it displays "You have no sessions"
+    // EFFECTS: displays numbered list of session names, or "You have no sessions" if none
     private void viewSession() {
         if (sessionsList.getLength() == 0) {
             System.out.println("You have no sessions.");
@@ -124,7 +124,7 @@ public class ExerciseManagerApp {
             int duration = input.nextInt();
             System.out.println("Number of Calories Burnt");
             int caloriesburnt = input.nextInt();
-            Exercise e1 = new Exercise(name, sets, reps, duration,caloriesburnt);
+            Exercise e1 = new Exercise(name, sets, reps, duration, caloriesburnt);
             s1.addExercise(e1);
             System.out.println("Exercise has been added.");
         }
