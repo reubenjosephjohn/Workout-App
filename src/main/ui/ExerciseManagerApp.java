@@ -6,12 +6,12 @@ import model.SessionsList;
 
 import java.util.Scanner;
 
-public class ExerciseApp {
+public class ExerciseManagerApp {
     private SessionsList sessionsList;
     private Scanner input;
 
     // EFFECTS: runs the exercise application
-    public ExerciseApp() {
+    public ExerciseManagerApp() {
         runExerciseApp();
     }
 
