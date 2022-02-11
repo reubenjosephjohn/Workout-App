@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Session {
     private ArrayList<Exercise> exercisesList;
-    private int timeTaken;
+    private int timeTaken; // in seconds
     private String sessionName;
 
     // EFFECTS: constructs an empty session with time taken as 0
@@ -56,8 +56,8 @@ public class Session {
     }
 
 
-    // EFFECTS: returns totalTime
-    public double getTimeTaken() {
+    // EFFECTS: returns timeTaken
+    public int getTimeTaken() {
         return timeTaken;
     }
 

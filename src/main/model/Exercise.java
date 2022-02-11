@@ -2,11 +2,11 @@ package model;
 
 // Represents an exercise with name, sets, reps, duration and calories burnt
 public class Exercise {
-    private String exerciseName;
-    private int exerciseSets;
-    private int exerciseReps;
-    private int exerciseDuration;
-    private int caloriesBurnt;
+    private String exerciseName; // name of the exercise
+    private int exerciseSets; //number of sets
+    private int exerciseReps; // number of reps
+    private int exerciseDuration; // duration of the exercise (in seconds)
+    private int caloriesBurnt; // number of calories burnt
 
     // REQUIRES: exerciseName,exerciseSets, caloriesBurnt, exerciseReps, exerciseWeight shouldn't be empty;
     // exerciseDuration>0

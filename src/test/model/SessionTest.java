@@ -22,25 +22,25 @@ public class SessionTest {
 
     @Test
     public void testAddExercise() {
-        Exercise ex = new Exercise("Push-ups", 3, 10, 1, 45);
+        Exercise ex = new Exercise("Push-ups", 3, 10, 30, 45);
         testSession.addExercise(ex);
         assertEquals(1, testSession.getLength());
     }
 
     @Test
     public void testRemoveExerciseOne() {
-        Exercise ex = new Exercise("Push-ups", 3, 10, 1,45);
+        Exercise ex = new Exercise("Push-ups", 3, 10, 30,45);
         testSession.addExercise(ex);
         assertEquals(1, testSession.getLength());
-        testSession.removeExercise("A");
+        testSession.removeExercise("Push-ups");
         assertEquals(0, testSession.getLength());
     }
 
     @Test
     public void testRemoveMultipleExercise() {
-        Exercise ex1 = new Exercise("Push-ups", 3, 10, 1,45);
-        Exercise ex2 = new Exercise("Squats", 4, 15, 2,90);
-        Exercise ex3 = new Exercise("Crunches", 5, 10, 3,100);
+        Exercise ex1 = new Exercise("Push-ups", 3, 10, 30,45);
+        Exercise ex2 = new Exercise("Squats", 4, 15, 45,90);
+        Exercise ex3 = new Exercise("Crunches", 5, 10, 60,100);
         testSession.addExercise(ex1);
         testSession.addExercise(ex2);
         testSession.addExercise(ex3);
@@ -51,9 +51,9 @@ public class SessionTest {
 
     @Test
     public void testRemoveNoExercise() {
-        Exercise ex1 = new Exercise("Push-ups", 3, 10, 1,45);
-        Exercise ex2 = new Exercise("Squats", 4, 15, 2,90);
-        Exercise ex3 = new Exercise("Crunches", 5, 10, 3,100);
+        Exercise ex1 = new Exercise("Push-ups", 3, 10, 30,45);
+        Exercise ex2 = new Exercise("Squats", 4, 15, 45,90);
+        Exercise ex3 = new Exercise("Crunches", 5, 10, 60,100);
         testSession.addExercise(ex1);
         testSession.addExercise(ex2);
         testSession.addExercise(ex3);
@@ -70,10 +70,10 @@ public class SessionTest {
 
     @Test
     public void testRemoveTime() {
-        testSession.addTime(40);
+        testSession.addTime(200);
         testSession.removeTime(20);
-        assertEquals(20, testSession.getTimeTaken());
-        testSession.removeTime(30);
+        assertEquals(180, testSession.getTimeTaken());
+        testSession.removeTime(200);
         assertEquals(0, testSession.getTimeTaken());
     }
 
@@ -92,9 +92,9 @@ public class SessionTest {
 
     @Test
     public void testGetExercises() {
-        Exercise ex1 = new Exercise("Push-ups", 3, 10, 1,45);
-        Exercise ex2 = new Exercise("Squats", 4, 15, 2,90);
-        Exercise ex3 = new Exercise("Crunches", 5, 10, 3,100);
+        Exercise ex1 = new Exercise("Push-ups", 3, 10, 30,45);
+        Exercise ex2 = new Exercise("Squats", 4, 15, 45,90);
+        Exercise ex3 = new Exercise("Crunches", 5, 10, 60,100);
         testSession.addExercise(ex1);
         testSession.addExercise(ex2);
         testSession.addExercise(ex3);

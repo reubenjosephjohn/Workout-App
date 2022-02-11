@@ -120,7 +120,7 @@ public class ExerciseManagerApp {
             int sets = input.nextInt();
             System.out.println("Number of Reps:");
             int reps = input.nextInt();
-            System.out.println("Duration:");
+            System.out.println("Duration: (in seconds)");
             int duration = input.nextInt();
             System.out.println("Number of Calories Burnt");
             int caloriesburnt = input.nextInt();
@@ -143,7 +143,7 @@ public class ExerciseManagerApp {
                 System.out.println("Name: " + s1.getExercises().get(i).getExerciseName());
                 System.out.println("Sets: " + (s1.getExercises().get(i).getExerciseSets()));
                 System.out.println("Reps: " + (s1.getExercises().get(i).getExerciseReps()));
-                System.out.println("Duration: " + (s1.getExercises().get(i).getExerciseDuration()));
+                System.out.println("Duration: (in seconds)" + (s1.getExercises().get(i).getExerciseDuration()));
                 System.out.println("Calories Burnt: " + (s1.getExercises().get(i).getCaloriesBurnt()));
 
             }
