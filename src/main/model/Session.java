@@ -29,7 +29,7 @@ public class Session {
     }
 
     // REQUIRES: time is >= 0
-    // EFFECTS: add time to timeTaken
+    // EFFECTS: adds time to timeTaken
     public void addTime(int time) {
         timeTaken = timeTaken + time;
     }

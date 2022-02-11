@@ -136,7 +136,7 @@ public class ExerciseManagerApp {
         int num = input.nextInt() - 1;
         Session s1 = sessionsList.getSessionsList().get(num);
         if (s1.getLength() == 0) {
-            System.out.println("There are no exercises in this workout.");
+            System.out.println("There are no exercises in this session.");
         } else {
             for (int i = 0; i < s1.getLength(); i++) {
                 System.out.println((i + 1) + ")");

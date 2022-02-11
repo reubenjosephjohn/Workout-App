@@ -14,7 +14,7 @@ public class ExerciseTest {
     }
 
     @Test
-    void testConstructor() {
+    public void testConstructor() {
         assertEquals("Crunches", exerciseTest.getExerciseName());
         assertEquals(3, exerciseTest.getExerciseSets());
         assertEquals(10, exerciseTest.getExerciseReps());
@@ -25,32 +25,32 @@ public class ExerciseTest {
 
 
     @Test
-    void testChangeName() {
+    public void testChangeName() {
         exerciseTest.changeExerciseName("Squats");
         assertEquals("Squats", exerciseTest.getExerciseName());
     }
 
     @Test
-    void testChangeSets() {
+    public void testChangeSets() {
         exerciseTest.changeExerciseSets(4);
         assertEquals(4, exerciseTest.getExerciseSets());
     }
 
     @Test
-    void testChangeReps() {
+    public void testChangeReps() {
         exerciseTest.changeExerciseReps(12);
         assertEquals(12, exerciseTest.getExerciseReps());
     }
 
     @Test
-    void testChangeTime() {
+    public void testChangeTime() {
         exerciseTest.changeExerciseDuration(60);
         assertEquals(60, exerciseTest.getExerciseDuration());
     }
 
 
     @Test
-    void testChangeCaloriesBurnt() {
+    public void testChangeCaloriesBurnt() {
         exerciseTest.changeCaloriesBurnt(100);
         assertEquals(100, exerciseTest.getCaloriesBurnt());
     }

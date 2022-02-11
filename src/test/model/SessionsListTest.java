@@ -10,24 +10,24 @@ public class SessionsListTest {
     private SessionsList sessionsListTest;
 
     @BeforeEach
-    void setup() {
+    public void setup() {
         sessionsListTest = new SessionsList();
     }
 
     @Test
-    void testConstructor() {
+    public void testConstructor() {
         assertEquals(0, sessionsListTest.getLength());
     }
 
     @Test
-    void testAddSession() {
+    public void testAddSession() {
         Session s1 = new Session("Session 1");
         sessionsListTest.addSession(s1);
         assertEquals(1, sessionsListTest.getLength());
     }
 
     @Test
-    void testRemoveSessionOne() {
+    public void testRemoveSessionOne() {
         Session s1 = new Session("Session 1");
         sessionsListTest.addSession(s1);
         assertEquals(1, sessionsListTest.getLength());
@@ -36,7 +36,7 @@ public class SessionsListTest {
     }
 
     @Test
-    void testRemoveSessionMultiple() {
+    public void testRemoveSessionMultiple() {
         Session s1 = new Session("Session 1");
         Session s2 = new Session("Session 2");
         Session s3 = new Session("Session 3");
@@ -50,7 +50,7 @@ public class SessionsListTest {
     }
 
     @Test
-    void testRemoveNoSession() {
+    public void testRemoveNoSession() {
         Session s1 = new Session("Session 1");
         sessionsListTest.addSession(s1);
         assertEquals(1, sessionsListTest.getLength());
@@ -59,7 +59,7 @@ public class SessionsListTest {
     }
 
     @Test
-    void testGetSessions() {
+    public void testGetSessions() {
         Session s1 = new Session("Session 1");
         Session s2 = new Session("Session 2");
         sessionsListTest.addSession(s1);
