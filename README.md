@@ -29,3 +29,7 @@ routines. By doing this, it will help me to be motivated and stay on the right t
     add exercises to it.
 - As a user, I want to be able to view a list of the exercise sessions that I have created.
 - As a user, I want to be able to view all the details of the exercises in a selected session.
+
+### **Phase 2**
+- As a user, I want to be able to save my exercise sessions to file.
+- As a user, I want to be able to load my exercise sessions from file.
