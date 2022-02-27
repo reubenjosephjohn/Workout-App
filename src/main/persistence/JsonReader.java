@@ -53,7 +53,7 @@ public class JsonReader {
     // MODIFIES: sl
     // EFFECTS: parses thingies from JSON object and adds them to sessionsList
     private void addSessions(SessionsList sl, JSONObject jsonObject) {
-        JSONArray jsonArray = jsonObject.getJSONArray("List of Sessions");
+        JSONArray jsonArray = jsonObject.getJSONArray("Sessions List");
         for (Object json : jsonArray) {
             JSONObject nextSession = (JSONObject) json;
             addSession(sl, nextSession);
@@ -82,12 +82,12 @@ public class JsonReader {
     // MODIFIES: s
     // EFFECTS: parses Exercise from JSON object and adds it to session
     private void addExercise(Session s, JSONObject jsonObject) {
-        String name = jsonObject.getString("name");
-        int sets = jsonObject.getInt("sets");
-        int reps = jsonObject.getInt("reps");
-        int duration = jsonObject.getInt("duration");
+        String exerciseName = jsonObject.getString("name");
+        int exerciseSets = jsonObject.getInt("sets");
+        int exerciseReps = jsonObject.getInt("reps");
+        int exerciseDuration = jsonObject.getInt("duration");
         int caloriesBurnt = jsonObject.getInt("caloriesBurnt");
-        Exercise exercise = new Exercise(name, sets, reps, duration,caloriesBurnt);
+        Exercise exercise = new Exercise(exerciseName, exerciseSets, exerciseReps, exerciseDuration,caloriesBurnt);
         s.addExercise(exercise);
     }
 

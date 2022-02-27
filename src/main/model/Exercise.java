@@ -1,7 +1,11 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
+
 // Represents an exercise with name, sets, reps, duration and calories burnt
-public class Exercise {
+public class Exercise implements Writable {
     private String exerciseName; // name of the exercise
     private int exerciseSets; //number of sets
     private int exerciseReps; // number of reps
@@ -81,7 +85,16 @@ public class Exercise {
         caloriesBurnt = c;
     }
 
-
-
+    // Referred to (https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git)
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", exerciseName);
+        json.put("sets", exerciseSets);
+        json.put("reps", exerciseReps);
+        json.put("duration", exerciseDuration);
+        json.put("caloriesBurnt", caloriesBurnt);
+        return json;
+    }
 
 }

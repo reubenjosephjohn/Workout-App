@@ -1,0 +1,31 @@
+{"Sessions List": [
+    {
+        "exercises": [
+            {
+                "duration": 60,
+                "caloriesBurnt": 45,
+                "reps": 3,
+                "sets": 3,
+                "name": "squats"
+            },
+            {
+                "duration": 100,
+                "caloriesBurnt": 80,
+                "reps": 10,
+                "sets": 4,
+                "name": "dead-lift"
+            }
+        ],
+        "name": "Back"
+    },
+    {
+        "exercises": [{
+            "duration": 60,
+            "caloriesBurnt": 60,
+            "reps": 5,
+            "sets": 3,
+            "name": "push-ups"
+        }],
+        "name": "Chest"
+    }
+]}

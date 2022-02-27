@@ -64,7 +64,7 @@ public class SessionsListTest {
         Session s2 = new Session("Session 2");
         sessionsListTest.addSession(s1);
         sessionsListTest.addSession(s2);
-        assertEquals(2, sessionsListTest.getSessionsList().size());
-        assertEquals("Session 2", sessionsListTest.getSessionsList().get(1).getSessionName());
+        assertEquals(2, sessionsListTest.getSessions().size());
+        assertEquals("Session 2", sessionsListTest.getSessions().get(1).getSessionName());
     }
 }

@@ -3,12 +3,19 @@ package ui;
 import model.Exercise;
 import model.Session;
 import model.SessionsList;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ExerciseManagerApp {
+    private static final String JSON_STORE = "./data/sessionsList.json";
     private SessionsList sessionsList;
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: runs the exercise application
     public ExerciseManagerApp() {
@@ -53,6 +60,10 @@ public class ExerciseManagerApp {
             addExercise();
         } else if (command.equals("i")) {
             viewSessionInfo();
+        } else if (command.equals("s")) {
+            saveSessionsList();
+        } else if (command.equals("l")) {
+            loadSessionsList();
         } else {
             System.out.println("Selection not valid...");
         }
@@ -68,7 +79,10 @@ public class ExerciseManagerApp {
         sessionsList = new SessionsList();
         input = new Scanner(System.in);
         input.useDelimiter("\n");
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
     }
+
 
     // EFFECTS: displays the list of sessions to user
     // inspired by TellerApp (https://github.students.cs.ubc.ca/CPSC210/TellerApp.git)
@@ -79,6 +93,8 @@ public class ExerciseManagerApp {
         System.out.println("\tc -> Create New Session");
         System.out.println("\ta -> Add Exercise to Session");
         System.out.println("\ti -> Get Session Info");
+        System.out.println("\ts -> Save Session List to File");
+        System.out.println("\tl -> Load Session List from File");
         System.out.println("\tq -> Quit");
     }
 
@@ -88,7 +104,7 @@ public class ExerciseManagerApp {
             System.out.println("You have no sessions.");
         }
         for (int i = 0; i < sessionsList.getLength(); i++) {
-            System.out.println((i + 1) + " -> " + sessionsList.getSessionsList().get(i).getSessionName());
+            System.out.println((i + 1) + " -> " + sessionsList.getSessions().get(i).getSessionName());
 
         }
     }
@@ -111,7 +127,7 @@ public class ExerciseManagerApp {
         } else {
             System.out.println("Select Session Number:");
             int num = input.nextInt();
-            Session s1 = sessionsList.getSessionsList().get(num - 1);
+            Session s1 = sessionsList.getSessions().get(num - 1);
             System.out.println("Selected:" + s1.getSessionName());
             System.out.println("Name of Exercise:");
             input.nextLine();
@@ -134,7 +150,7 @@ public class ExerciseManagerApp {
     private void viewSessionInfo() {
         System.out.println("Which session would you like to view? (Enter valid number):");
         int num = input.nextInt() - 1;
-        Session s1 = sessionsList.getSessionsList().get(num);
+        Session s1 = sessionsList.getSessions().get(num);
         if (s1.getLength() == 0) {
             System.out.println("There are no exercises in this session.");
         } else {
@@ -149,4 +165,31 @@ public class ExerciseManagerApp {
             }
         }
     }
+
+    // EFFECTS: saves the sessionsList to file
+    // Reference: (https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git)
+    private void saveSessionsList() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(sessionsList);
+            jsonWriter.close();
+            System.out.println("Your sessions are Saved to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads sessionsList from file
+    //     // Reference: (https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git)
+    private void loadSessionsList() {
+        try {
+            sessionsList = jsonReader.read();
+            System.out.println("Your Sessions are Loaded from "  + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
+    }
+
+
 }
