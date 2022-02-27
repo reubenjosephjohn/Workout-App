@@ -181,7 +181,7 @@ public class ExerciseManagerApp {
 
     // MODIFIES: this
     // EFFECTS: loads sessionsList from file
-    //     // Reference: (https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git)
+    // Reference: (https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git)
     private void loadSessionsList() {
         try {
             sessionsList = jsonReader.read();
