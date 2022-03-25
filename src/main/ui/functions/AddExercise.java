@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// SOURCE: Code in this class is modelled based on
+// (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git)
 public class AddExercise extends Function {
     private JTextField textFieldName;
     private JTextField textFieldSets;
@@ -86,10 +88,10 @@ public class AddExercise extends Function {
             String name = textFieldName.getText();
             String sets = textFieldSets.getText();
             String reps = textFieldReps.getText();
-            String weight = textFieldCaloriesBurnt.getText();
+            String caloriesBurnt = textFieldCaloriesBurnt.getText();
             String duration = textFieldDuration.getText();
             String number = textFieldNumber.getText();
-            exerciseManagerApp.addExercise(name, sets, reps, weight, duration, number);
+            exerciseManagerApp.addExercise(name, sets, reps, caloriesBurnt, duration, number);
             textFieldName.setText(null);
             textFieldSets.setText(null);
             textFieldReps.setText(null);

@@ -4,6 +4,8 @@ import ui.ExerciseManagerApp;
 
 import javax.swing.*;
 
+// SOURCE: Code in this class is modelled based on
+// (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git)
 public abstract class Function {
     protected JButton button;
     protected ExerciseManagerApp exerciseManagerApp;
@@ -17,15 +19,15 @@ public abstract class Function {
         addListener();
     }
 
-    // EFFECTS: creates the appropriate field for function
+    // EFFECTS: creates field for function
     protected abstract void createFields(JComponent parent);
 
-    // EFFECTS: adds a listener for this function
-    protected abstract void addListener();
-
     // MODIFIES: parent
-    // EFFECTS:  adds the given button to the parent component
+    // EFFECTS:  adds given button to the parent component
     public void addToParent(JComponent parent) {
         parent.add(button);
     }
+
+    // EFFECTS: adds listener for this function
+    protected abstract void addListener();
 }

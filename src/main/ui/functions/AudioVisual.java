@@ -13,8 +13,15 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+// SOURCE: Code in this class is modelled based on
+// (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git)
+// (https://stackoverflow.com/questions/20811728/adding-music-sound-to-java-programs) for the audio
+// (https://stackoverflow.com/questions/299495/how-to-add-an-image-to-a-jpanel) for the image
+
 public class AudioVisual extends Function {
-    public static final String JPG = "./data/project_img1.jpg";
+    // SOURCE: (https://cdn-0.therandomvibez.com/wp-content/uploads/2019/09/Quotes-About-Grinding-And-Hustling.jpg)
+    public static final String JPG = "./data/project_img.jpg";
+    // SOURCE: (https://www.youtube.com/watch?v=w1PRiHEHJd8)
     public static final String WAV = "./data/project_audio.wav";
     private JFrame frame;
     private ImageIcon icon;
@@ -30,7 +37,7 @@ public class AudioVisual extends Function {
     }
 
     @Override
-    // EFFECTS: creates the appropriate field for function
+    // EFFECTS: creates appropriate field for function
     protected void createFields(JComponent parent) {
         button = new JButton("Click Here!");
         button.setEnabled(true);
@@ -46,28 +53,16 @@ public class AudioVisual extends Function {
     private class AudioVisualClickHandler implements ActionListener {
 
         @Override
-        // EFFECTS: displays JPG and plays WAV
+        // EFFECTS: displays image and plays audio
         public void actionPerformed(ActionEvent e) {
             image();
-            music();
-        }
-
-        // EFFECTS: displays the image selected
-        private void image() {
-            frame = new JFrame();
-            frame.setMinimumSize(new Dimension(400, 400));
-            icon = new ImageIcon(JPG);
-            label = new JLabel(icon);
-            frame.add(label);
-            frame.pack();
-            frame.setVisible(true);
+            audio();
         }
 
         // EFFECTS: plays the selected audio file
-        public void music() {
+        public void audio() {
             audioPlayer = AudioPlayer.player;
             ContinuousAudioDataStream loop = null;
-
             try {
                 inputStream = new FileInputStream(WAV);
                 audioStream = new AudioStream(inputStream);
@@ -79,6 +74,16 @@ public class AudioVisual extends Function {
             audioPlayer.start(loop);
         }
 
+        // EFFECTS: displays the image selected
+        private void image() {
+            frame = new JFrame();
+            frame.setMinimumSize(new Dimension(600, 600));
+            icon = new ImageIcon(JPG);
+            label = new JLabel(icon);
+            frame.add(label);
+            frame.pack();
+            frame.setVisible(true);
+        }
 
     }
 }

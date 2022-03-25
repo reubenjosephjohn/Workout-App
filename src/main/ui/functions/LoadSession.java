@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+// SOURCE: Code in this class is modelled based on
+// (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git)
 public class LoadSession extends Function {
     private JsonReader jsonReader;
     private static final String JSON_STORE = "./data/workroom.json";
@@ -21,7 +23,7 @@ public class LoadSession extends Function {
     }
 
     @Override
-    // EFFECTS: creates the appropriate field for function
+    // EFFECTS: creates field for function
     protected void createFields(JComponent parent) {
         button = new JButton("Load Sessions from File");
         button.setEnabled(true);
@@ -35,11 +37,10 @@ public class LoadSession extends Function {
         button.addActionListener((new LoadSessionClickHandler()));
     }
 
-    // class for the click handler
     private class LoadSessionClickHandler implements ActionListener {
 
         @Override
-        // EFFECTS: implements actions
+        // EFFECTS: implements action
         public void actionPerformed(ActionEvent e) {
             try {
                 SessionsList sessionsList = jsonReader.read();

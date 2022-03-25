@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// SOURCE: Code in this class is modelled based on
+// (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git)
 public class CreateSession extends Function {
     private JLabel name;
     private JTextField textField;
@@ -15,7 +17,7 @@ public class CreateSession extends Function {
         super(exerciseManagerApp, parent);
     }
 
-    // EFFECTS: creates the appropriate field for function
+    // EFFECTS: creates field for function
     @Override
     protected void createFields(JComponent parent) {
         name = new JLabel("Name: ");
@@ -37,11 +39,10 @@ public class CreateSession extends Function {
         button.addActionListener((new CreateSessionClickHandler()));
     }
 
-    // class for the click handler
     private class CreateSessionClickHandler implements ActionListener {
 
         @Override
-        // EFFECTS: implements actions
+        // EFFECTS: implements action
         public void actionPerformed(ActionEvent e) {
             String name = textField.getText();
             exerciseManagerApp.addSession(name);

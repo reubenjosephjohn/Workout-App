@@ -12,6 +12,11 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+// SOURCE: Code in this class is modelled based on
+// (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git) - structure
+// (https://stackoverflow.com/questions/50949189/building-ui-with-java-swing)
+// (https://docs.oracle.com/javase/tutorial/uiswing/index.html)
+
 public class ExerciseManagerApp extends JFrame {
     private static final int WIDTH = 1000;
     private static final int HEIGHT = 500;
@@ -102,17 +107,6 @@ public class ExerciseManagerApp extends JFrame {
     }
 
     // MODIFIES: this
-    // EFFECTS: creates panel for addExercise function
-    private void makeAddExercisePanel(JPanel addExercisePanel) {
-        addExercisePanel.setLayout(new GridLayout(4, 4));
-        addExercisePanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder(
-                "Create an Exercise:"), BorderFactory.createEmptyBorder(20,15,20,15)));
-
-        addExercise = new AddExercise(this, addExercisePanel);
-        functions.add(addExercise);
-    }
-
-    // MODIFIES: this
     // EFFECTS: creates panel for ViewDetails function
     private void makeViewPanel(JPanel viewPanel) {
         viewPanel.setLayout(new GridLayout(2, 0));
@@ -127,17 +121,14 @@ public class ExerciseManagerApp extends JFrame {
     }
 
     // MODIFIES: this
-    // EFFECTS: creates panel for Save and Load functions
-    private void makeSaveLoadPanel(JPanel saveLoadPanel) {
-        saveLoadPanel.setLayout(new GridLayout(2, 0));
-        saveLoadPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder(
-                "Save or load file:"), BorderFactory.createEmptyBorder(15,15,15,15)));
+    // EFFECTS: creates panel for addExercise function
+    private void makeAddExercisePanel(JPanel addExercisePanel) {
+        addExercisePanel.setLayout(new GridLayout(4, 4));
+        addExercisePanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder(
+                "Create an Exercise:"), BorderFactory.createEmptyBorder(20,15,20,15)));
 
-        loadSession = new LoadSession(this, saveLoadPanel);
-        functions.add(loadSession);
-
-        saveSession = new SaveSession(this, saveLoadPanel);
-        functions.add(loadSession);
+        addExercise = new AddExercise(this, addExercisePanel);
+        functions.add(addExercise);
     }
 
     // MODIFIES: this
@@ -150,6 +141,20 @@ public class ExerciseManagerApp extends JFrame {
 
         audioVisual = new AudioVisual(this, audioVisualPanel);
         functions.add(audioVisual);
+    }
+
+    // MODIFIES: this
+    // EFFECTS: creates panel for Save and Load functions
+    private void makeSaveLoadPanel(JPanel saveLoadPanel) {
+        saveLoadPanel.setLayout(new GridLayout(2, 0));
+        saveLoadPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createTitledBorder(
+                "Save or load file:"), BorderFactory.createEmptyBorder(15,15,15,15)));
+
+        loadSession = new LoadSession(this, saveLoadPanel);
+        functions.add(loadSession);
+
+        saveSession = new SaveSession(this, saveLoadPanel);
+        functions.add(loadSession);
     }
 
     // MODIFIES: this
@@ -175,6 +180,18 @@ public class ExerciseManagerApp extends JFrame {
 
     }
 
+    // REQUIRES: Strings for sets, reps, caloriesBurnt, and duration are natural numbers and
+    // number is Natural number that <= the highest session number
+    // MODIFIES: sessionsList, this
+    // EFFECTS: adds an exercise to selected session, and sets the textArea to display the details of that session
+    public void addExercise(String name, String sets, String reps, String caloriesBurnt, String duration,
+                            String number) {
+        int number1 = parseInt(number);
+        Session s1 = sessionsList.getSessions().get(number1 - 1);
+        s1.addExercise(new Exercise(name, parseInt(sets), parseInt(reps), parseInt(caloriesBurnt), parseInt(duration)));
+        viewDetails(number1);
+    }
+
     // MODIFIES: sessionsList, this
     // EFFECTS: adds session to sessionsList and sets display to all sessions
     public void addSession(String name) {
@@ -196,16 +213,7 @@ public class ExerciseManagerApp extends JFrame {
         }
     }
 
-    // REQUIRES: Strings for sets, reps, caloriesBurnt, and time are natural numbers and
-    // number is Natural number that <= the highest session number
-    // MODIFIES: sessionsList, this
-    // EFFECTS: adds an exercise to selected session, and sets the textArea to display the details of that session
-    public void addExercise(String name, String sets, String reps, String weight, String time, String number) {
-        int number1 = parseInt(number);
-        Session s1 = sessionsList.getSessions().get(number1 - 1);
-        s1.addExercise(new Exercise(name, parseInt(sets), parseInt(reps), parseInt(weight), parseInt(time)));
-        viewDetails(number1);
-    }
+
 
     // EFFECTS: returns sessionsList
     public SessionsList getSessionsList() {
@@ -230,11 +238,17 @@ public class ExerciseManagerApp extends JFrame {
                 String sets = (" --- Sets: " + (s1.getExercises().get(i).getExerciseSets()) + "\n");
                 String reps = (" --- Reps: " + (s1.getExercises().get(i).getExerciseReps()) + "\n");
                 String caloriesBurnt = (" --- Calories Burnt: " + (s1.getExercises().get(i).getCaloriesBurnt()) + "\n");
-                String time = (" --- Duration: " + (s1.getExercises().get(i).getExerciseDuration()) + "\n");
+                String duration = (" --- Duration: " + (s1.getExercises().get(i).getExerciseDuration()) + "\n");
 
-                textArea.setText(s + sessionNumber + name + sets + reps + caloriesBurnt + time + "\n");
+                textArea.setText(s + sessionNumber + name + sets + reps + caloriesBurnt + duration + "\n");
             }
         }
+    }
+
+    // MODIFIES: textArea, this
+    // EFFECTS: sets the textArea to given string
+    public void setText(String s) {
+        textArea.setText(s);
     }
 
     // MODIFIES: sessionsList, this
@@ -243,11 +257,6 @@ public class ExerciseManagerApp extends JFrame {
         sessionsList = sl;
     }
 
-    // MODIFIES: textArea, this
-    // EFFECTS: sets the textArea to given string
-    public void setText(String s) {
-        textArea.setText(s);
-    }
 }
 
 

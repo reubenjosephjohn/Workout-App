@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 
+// SOURCE: Code in this class is modelled based on
+// (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git)
 public class SaveSession extends Function {
     private static final String JSON_STORE = "./data/workroom.json";
     private JsonWriter jsonWriter;
@@ -19,7 +21,7 @@ public class SaveSession extends Function {
     }
 
     @Override
-    // EFFECTS: creates the appropriate field for function
+    // EFFECTS: creates field for function
     protected void createFields(JComponent parent) {
         button = new JButton("Save Sessions to File");
         button.setEnabled(true);
@@ -33,7 +35,6 @@ public class SaveSession extends Function {
         button.addActionListener((new SaveSessionClickHandler()));
     }
 
-    // class for the click handler
     private class SaveSessionClickHandler implements ActionListener {
         SessionsList sessionsList = exerciseManagerApp.getSessionsList();
 

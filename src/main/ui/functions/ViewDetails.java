@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 
 import static java.lang.Integer.parseInt;
 
+// SOURCE: Code in this class is modelled based on
+// (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git)
 public class ViewDetails extends Function {
     private JLabel name;
     private JTextField textField;
@@ -39,7 +41,6 @@ public class ViewDetails extends Function {
         button.addActionListener((new ViewDetailsClickHandler()));
     }
 
-    // class for the click handler
     private class ViewDetailsClickHandler implements ActionListener {
 
         @Override
