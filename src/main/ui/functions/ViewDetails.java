@@ -23,13 +23,13 @@ public class ViewDetails extends Function {
     // EFFECTS: creates the appropriate field for function
     protected void createFields(JComponent parent) {
 
-        name = new JLabel("View a specific session: ");
+        name = new JLabel("View session: ");
         parent.add(name);
 
         textField = new JTextField(0);
         parent.add(textField);
 
-        button = new JButton("View Specific session");
+        button = new JButton("View details of a particular session:");
         button.setEnabled(true);
         addToParent(parent);
 

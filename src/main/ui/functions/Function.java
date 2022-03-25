@@ -19,14 +19,14 @@ public abstract class Function {
         addListener();
     }
 
-    // EFFECTS: creates field for function
-    protected abstract void createFields(JComponent parent);
-
     // MODIFIES: parent
     // EFFECTS:  adds given button to the parent component
     public void addToParent(JComponent parent) {
         parent.add(button);
     }
+
+    // EFFECTS: creates field for function
+    protected abstract void createFields(JComponent parent);
 
     // EFFECTS: adds listener for this function
     protected abstract void addListener();

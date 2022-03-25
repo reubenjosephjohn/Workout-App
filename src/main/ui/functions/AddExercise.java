@@ -79,7 +79,6 @@ public class AddExercise extends Function {
         button.addActionListener((new AddExerciseClickHandler()));
     }
 
-    // class for the click handler
     private class AddExerciseClickHandler implements ActionListener {
 
         @Override

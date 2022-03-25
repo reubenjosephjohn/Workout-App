@@ -1,1 +1,10 @@
-{"Sessions List": []}
+{"Sessions List": [{
+    "exercises": [{
+        "duration": 1,
+        "caloriesBurnt": 1,
+        "reps": 1,
+        "sets": 1,
+        "name": "wj"
+    }],
+    "name": "dd"
+}]}

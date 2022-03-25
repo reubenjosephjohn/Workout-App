@@ -16,7 +16,6 @@ import static java.lang.Integer.parseInt;
 // (https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Complete.git) - structure
 // (https://stackoverflow.com/questions/50949189/building-ui-with-java-swing)
 // (https://docs.oracle.com/javase/tutorial/uiswing/index.html)
-
 public class ExerciseManagerApp extends JFrame {
     private static final int WIDTH = 1000;
     private static final int HEIGHT = 500;

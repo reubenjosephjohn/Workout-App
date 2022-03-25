@@ -30,7 +30,6 @@ public class ViewSessions extends Function {
         button.addActionListener(new ViewSessionsClickHandler());
     }
 
-    // class for the click handler
     private class ViewSessionsClickHandler implements ActionListener {
 
         @Override
