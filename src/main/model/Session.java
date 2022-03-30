@@ -22,6 +22,8 @@ public class Session implements Writable {
     // EFFECTS: adds an exercise to the end of the session
     public void addExercise(Exercise e) {
         exercisesList.add(e);
+        EventLog.getInstance().logEvent(new Event(e.getExerciseName()
+                + " has been added to " + sessionName));
     }
 
     // REQUIRES: length of s  is not 0

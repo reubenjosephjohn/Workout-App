@@ -22,6 +22,8 @@ public class SessionsList implements Writable {
     public void addSession(Session s) {
 
         sessionsList.add(s);
+        EventLog.getInstance().logEvent(new Event(s.getSessionName()
+                + " has been added to the List of Sessions."));
     }
 
     // REQUIRES: session must be in the sessionsList
