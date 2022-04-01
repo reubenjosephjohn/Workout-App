@@ -33,3 +33,68 @@ routines. By doing this, it will help me to be motivated and stay on the right t
 ### **Phase 2**
 - As a user, I want to be able to save my exercise sessions to file.
 - As a user, I want to be able to load my exercise sessions from file.
+
+### **Phase 4 - Task 2**
+Thu Mar 31 20:42:01 PDT 2022
+Chest has been added to the List of Sessions.
+
+
+Thu Mar 31 20:42:46 PDT 2022
+Barbell Bench Press has been added to Chest.
+
+
+Thu Mar 31 20:43:18 PDT 2022
+Pushups has been added to Chest.
+
+
+Thu Mar 31 20:43:43 PDT 2022
+Chest fly has been added to Chest.
+
+
+Thu Mar 31 20:43:54 PDT 2022
+Back has been added to the List of Sessions.
+
+
+Thu Mar 31 20:44:37 PDT 2022
+Deadlift has been added to Back.
+
+
+Thu Mar 31 20:45:27 PDT 2022
+Pullups has been added to Back.
+
+
+Thu Mar 31 20:45:53 PDT 2022
+Inverted Row has been added to Back.
+
+
+Thu Mar 31 20:46:10 PDT 2022
+Barbell Bench Press has been added to Chest.
+
+
+Thu Mar 31 20:46:10 PDT 2022
+Pushups has been added to Chest.
+
+
+Thu Mar 31 20:46:10 PDT 2022
+Chest fly has been added to Chest.
+
+
+Thu Mar 31 20:46:10 PDT 2022
+Chest has been added to the List of Sessions.
+
+
+Thu Mar 31 20:46:10 PDT 2022
+Deadlift has been added to Back.
+
+
+Thu Mar 31 20:46:10 PDT 2022
+Pullups has been added to Back.
+
+
+Thu Mar 31 20:46:10 PDT 2022
+Inverted Row has been added to Back.
+
+
+Thu Mar 31 20:46:10 PDT 2022
+Back has been added to the List of Sessions.
+

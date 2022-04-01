@@ -23,7 +23,7 @@ public class Session implements Writable {
     public void addExercise(Exercise e) {
         exercisesList.add(e);
         EventLog.getInstance().logEvent(new Event(e.getExerciseName()
-                + " has been added to " + sessionName));
+                + " has been added to " + sessionName + "."));
     }
 
     // REQUIRES: length of s  is not 0
