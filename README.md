@@ -67,37 +67,6 @@ Thu Mar 31 20:45:53 PDT 2022
 Inverted Row has been added to Back.
 
 
-Thu Mar 31 20:46:10 PDT 2022
-Barbell Bench Press has been added to Chest.
-
-
-Thu Mar 31 20:46:10 PDT 2022
-Pushups has been added to Chest.
-
-
-Thu Mar 31 20:46:10 PDT 2022
-Chest fly has been added to Chest.
-
-
-Thu Mar 31 20:46:10 PDT 2022
-Chest has been added to the List of Sessions.
-
-
-Thu Mar 31 20:46:10 PDT 2022
-Deadlift has been added to Back.
-
-
-Thu Mar 31 20:46:10 PDT 2022
-Pullups has been added to Back.
-
-
-Thu Mar 31 20:46:10 PDT 2022
-Inverted Row has been added to Back.
-
-
-Thu Mar 31 20:46:10 PDT 2022
-Back has been added to the List of Sessions.
-
 
 ### **Phase 4: Task 3**
 
